@@ -1,18 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Local tic tac toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-      <p>Testing pushing with github.</p>
-    </body>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1>Browser Template</h1>
+  <p>Testing pushing with github</p>
+  <body>
+    <p id="message"></p>
+    <h1>API Token Authentication</h1>
+    <legend>Sign-up!</legend>
+    <form id="sign-up" class="border">
+      <fieldset>
+        <!--takes information for auth file-->
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+        <input type="submit" value="Sign up!">
+      </fieldset>
+    </form>
+    <hr>
+    <legend>Sign-in!</legend>
+    <form id="sign-in" class="border">
+      <fieldset>
+        <!--takes information for auth file-->
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+    <hr>
+    <legend>Change Password!</legend>
+    <form id="change-password" class="border">
+      <fieldset>
+        <!--takes information for auth file-->
+        <input type="password" name="passwords[old]" placeholder="Old">
+        <input type="password" name="passwords[new]" placeholder="New">
+        <input type="submit" value="change-password!">
+      </fieldset>
+    </form>
+    <hr>
+    <legend>Sign Out</legend>
+    <input type="submit" value="Sign Out!">
+    <h1>Examples</h1>
+    <form id="create-example" class="border">
+      <input type="text" name="example[text]" placeholder="example">
+      <input type="submit" value "Create Example">
+      <fieldset>
+
+</body>
+
 </html>

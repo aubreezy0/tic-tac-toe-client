@@ -1,11 +1,3 @@
-# read me
-https://docs.google.com/document/d/1W4AQJVZAv-sDtPlkc-WCCuQKj8sE3yftzFHkfck8EcY/edit?usp=sharing
-(Please request permission)
-
-List of requirements for future references
-https://docs.google.com/document/d/1D6FxVVIJtMLrXSpqoD8OoMKobbsz0HkOLvhoLBBmr4k/edit?usp=sharing
-
-(and below)
 browser-template
 A template for starting front-end projects. Webpack for require system, build pipeline, and development server. Boostrap and Handlebars.js included. No front-end frameworks included.
 

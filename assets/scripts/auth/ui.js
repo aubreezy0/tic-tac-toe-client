@@ -49,7 +49,7 @@ const changePasswordSuccess = function (data) {
 const changePasswordFailure = function (error) {
   $('#message').text('Password not changed')
   $('#message').css('background-color', 'red')
-  // console.error('changePasswordFailure ran. Error is :', error)
+  console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {

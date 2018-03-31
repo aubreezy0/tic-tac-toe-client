@@ -23,9 +23,9 @@
     <form id="sign-up" class="border">
       <fieldset>
         <!--takes information for auth file-->
-        <input type="text" name="credentials[email]" placeholder="Email">
-        <input type="password" name="credentials[password]" placeholder="Password">
-        <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+        <input type="text" name="credentials[email]" autocomplete="foo" placeholder="Email">
+        <input type="password" name="credentials[password]" autocomplete="foo" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" autocomplete="foo"  placeholder="Password Confirmation">
         <input type="submit" value="Sign up!">
       </fieldset>
     </form>
@@ -34,8 +34,8 @@
     <form id="sign-in" class="border">
       <fieldset>
         <!--takes information for auth file-->
-        <input type="text" name="credentials[email]" placeholder="Email">
-        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="text" name="credentials[email]" autocomplete="foo" placeholder="Email">
+        <input type="password" name="credentials[password]" autocomplete="foo" placeholder="Password">
         <input type="submit" value="Sign in!">
       </fieldset>
     </form>
@@ -44,19 +44,14 @@
     <form id="change-password" class="border">
       <fieldset>
         <!--takes information for auth file-->
-        <input type="password" name="passwords[old]" placeholder="Old">
-        <input type="password" name="passwords[new]" placeholder="New">
+        <input type="password" name="passwords[old]" autocomplete="foo" placeholder="Old">
+        <input type="password" name="passwords[new]" autocomplete="foo" placeholder="New">
         <input type="submit" value="change-password!">
       </fieldset>
     </form>
     <hr>
     <legend>Sign Out</legend>
     <input type="submit" value="Sign Out!">
-    <h1>Examples</h1>
-    <form id="create-example" class="border">
-      <input type="text" name="example[text]" placeholder="example">
-      <input type="submit" value "Create Example">
-      <fieldset>
 
 </body>
 

@@ -6,10 +6,11 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const authEvents = require('./auth/events')
+const gameApi = require('./auth/events')
 // const exampleEvents = require('./examples/events')
 
 $(() => {
-  authEvents.addHandlers()
+  gameApi.addHandlers()
+  // authEvents.addHandlers()
 //  exampleEvents.addHandlers()
 })

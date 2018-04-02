@@ -43,7 +43,7 @@ const signOutFailure = function (error) {
 const changePasswordSuccess = function (data) {
   $('#message').text('Successfully changed password')
   $('#message').css('background-color', 'green')
-  console.log('signUpSuccess ran. Data is :', data)
+  console.log('signUpSuccess ran and nothing was returned!')
 }
 
 const changePasswordFailure = function (error) {

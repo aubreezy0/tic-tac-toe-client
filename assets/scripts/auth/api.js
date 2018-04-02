@@ -22,10 +22,12 @@ const signIn = function (data) {
 }
 
 const signOut = function () {
+debugger
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + `/sign-out/:id`,
     method: 'DELETE',
     headers: {
+      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     }
   })
@@ -34,9 +36,10 @@ const signOut = function () {
 const changePassword = function (data) {
   console.log('data is ', data)
   return $.ajax({
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + '/change-password/:id',
     method: 'PATCH',
     headers: {
+      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
     data

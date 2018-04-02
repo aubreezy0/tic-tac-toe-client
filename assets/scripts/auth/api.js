@@ -21,15 +21,18 @@ const signIn = function (data) {
   })
 }
 
-const signOut = function () {
-debugger
+const signOut = function (data) {
+  console.log('signOut store.user is ', store.user)
   return $.ajax({
-    url: config.apiUrl + `/sign-out/:id`,
+    url: config.apiUrl + `/sign-out/${
+      store.user.id
+    }`,
     method: 'DELETE',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 

@@ -27,7 +27,7 @@ const signInFailure = function (error) {
   console.error('signInFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function () {
+const signOutSuccess = function (data) {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran and nothing was returned!')

@@ -1,4 +1,4 @@
-
+// old scss
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
@@ -9,56 +9,137 @@ $grey: rgb(128, 128, 128);
 $teal: rgb(0, 156, 161);
 $black: #000;
 
+// body {
+//   background-color: $background-color;
+//   color: $font-color;
+//   margin-left: 12px;
+//   margin-right: 12px;
+// }
+//
+// h4 {
+//   color: $black;
+// }
+//
+
+// .col-xs-4 {
+//   padding: 12px;
+// }
+//
+// .click-it {
+//   color: yellow;
+// }
+//
+
+
+.game-board {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.box {
+  align-items: center;
+  border: 1px solid red;
+  justify-content: center;
+  cursor: pointer;
+  &:before {
+    font-size: 1.5em;
+    line-height: 1;
+  }
+  &.cross::before {
+    content: "x";
+    color:green;
+  }
+  &.circle:before {
+    content: "o";
+    color: white;
+  }
+}
+//
+//
+// .grey {
+//   background-color: $grey;
+// }
+//
+// .teal {
+//   background-color: $teal;
+// }
+//
+// .modal-title {
+//   color: red;
+// }
+//
+// .row {
+//   //display: board-row;
+//   //height: 200px;
+//   height: 100%;
+//   margin-left: 12px;
+//   margin-right: 12px;
+//   //width: 100%;
+// }
+//
+// .col- {
+//   text-align: center;
+// }
+//
+// .title {
+//   text-align: center;
+// }
+//   .reset {
+//   color: $black;
+// }
 body {
   background-color: $background-color;
   color: $font-color;
+  text-align: center;
   margin-left: 12px;
   margin-right: 12px;
+  margin-top: 50px;
 }
 
-h4 {
-  color: $black;
-}
+.turn {
+  margin-bottom: 10px;
+  }
 
-.box {
-  border: 1px solid $white;
-}
+.block {
+  margin-bottom: 10px;
+  }
 
-.col-xs-4 {
-  padding: 12px;
-}
-
-.click-it {
-  color: yellow;
-}
-
-.grey {
-  background-color: $grey;
-}
-
-.teal {
-  background-color: $teal;
-}
-
-.modal-title {
-  color: red;
-}
-
-.row {
-  //display: table-row;
-  //height: 200px;
-  height: 100%;
-  margin-left: 12px;
-  margin-right: 12px;
-  //width: 100%;
-
-.col- {
-
-}
-
-  text-align: center;
-}
-
-.title {
-  text-align: center;
-}
+table {
+    width: 150px;
+    margin: 0 auto;
+    td {
+      width: 50px;
+      height: 50px;
+      border: 2px solid #fff;
+      cursor: pointer;
+      &:before {
+        font-size: 1.5em;
+        line-height: 1;
+      }
+      &.cross:before {
+        content: "x";
+        color:green;
+      }
+      &.circle:before {
+        content: "o";
+        color: white;
+      }
+      &.noclick {
+        pointer-events: none;
+      }
+    }
+  }
+  .reset {
+    background: #555;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    color: #FFF;
+    &:hover {
+      opacity:0.8;
+    }
+  }
+.messages {
+  padding: 5px 10px;
+  }

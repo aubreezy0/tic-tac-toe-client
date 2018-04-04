@@ -46,34 +46,6 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-//  ?? maybe I don't need this??
-//   const onClick = function (event) {
-//   event.preventDefault()
-//   console.log('you clicked it!')
-//
-//   // const data = getFormFields(this)
-//   // api.signIn(data)
-//     .then(ui.clickSuccess)
-//     .catch(ui.clickFailure)
-// }
-
-// Log the event.target
-
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-}
-//  the code below is also in index.js
-// $('td').on('click', function (event) {
-//   event.preventDefault()
-// console.log('events You clicked me!', event.target)
-// })
-
-module.exports = {
-  addHandlers
-}
 $(function () {
   let player = 1
   const table = $('table')
@@ -90,7 +62,10 @@ $(function () {
       changeBoard(td, gamePiece)
       if (checkForWin(table, gamePiece)) {
         messages.html('Player ' + player + ', you\'re a winnah, baby!')
+        table.html(' ')
         turn.html('')
+        // write function freeze table because
+        // reset(table) worked
       } else {
         player = setNextPlayer(player)
         showNextPlayer(turn, player)
@@ -99,6 +74,11 @@ $(function () {
       messages.html('This box is already checked.')
     }
   })
+  //
+  // $('.freeze').on('click', function () {
+  //   won === true
+  //   freeze(table)
+  // })
 
   $('.reset').on('click', function () {
     player = 1
@@ -130,9 +110,9 @@ function assignGamePieceToPlayer (player) {
 
 function setNextPlayer (player) {
   if (player === 1) {
-    return player = 2
+    return 2
   } else {
-    return player = 1
+    return 1
   }
 }
 
@@ -162,8 +142,33 @@ function checkForWin (table, gamePiece) {
   return won
 }
 
+// function freeze (table) {
+//   table.find('td').each(function () {
+//     $(this).addClass('noclick')
+//   })
+// }
+
 function reset (table) {
   table.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross')
   })
+}
+
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('submit', onSignOut)
+}
+
+module.exports = {
+  addHandlers,
+  showNextPlayer,
+  getBoard,
+  changeBoard,
+  checkForWin,
+  setNextPlayer,
+  reset,
+  // freeze,
+  assignGamePieceToPlayer
 }

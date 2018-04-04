@@ -1,5 +1,6 @@
+// 4/3 3:12. This is when things went crazy. If everything fails, roll back until this message disappears.
 'use strict'
-// pasted from here down...
+
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
@@ -45,13 +46,124 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+//  ?? maybe I don't need this??
+//   const onClick = function (event) {
+//   event.preventDefault()
+//   console.log('you clicked it!')
+//
+//   // const data = getFormFields(this)
+//   // api.signIn(data)
+//     .then(ui.clickSuccess)
+//     .catch(ui.clickFailure)
+// }
+
+// Log the event.target
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
 }
+//  the code below is also in index.js
+// $('td').on('click', function (event) {
+//   event.preventDefault()
+// console.log('events You clicked me!', event.target)
+// })
 
 module.exports = {
   addHandlers
+}
+$(function () {
+  let player = 1
+  const table = $('table')
+  const messages = $('.messages')
+  const turn = $('.turn')
+  let td = $('td')
+  showNextPlayer(turn, player)
+
+  $('td').on('click', function () {
+    td = $(this)
+    const board = getBoard(td)
+    if (!board) {
+      const gamePiece = assignGamePieceToPlayer(player)
+      changeBoard(td, gamePiece)
+      if (checkForWin(table, gamePiece)) {
+        messages.html('Player ' + player + ', you\'re a winnah, baby!')
+        turn.html('')
+      } else {
+        player = setNextPlayer(player)
+        showNextPlayer(turn, player)
+      }
+    } else {
+      messages.html('This box is already checked.')
+    }
+  })
+
+  $('.reset').on('click', function () {
+    player = 1
+    messages.html('')
+    reset(table)
+    showNextPlayer(turn, player)
+  })
+})
+
+function getBoard (td) {
+  if (td.hasClass('cross') || td.hasClass('circle')) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+function changeBoard (td, gamePiece) {
+  return td.addClass(gamePiece)
+}
+
+function assignGamePieceToPlayer (player) {
+  if (player === 1) {
+    return 'cross'
+  } else {
+    return 'circle'
+  }
+}
+
+function setNextPlayer (player) {
+  if (player === 1) {
+    return player = 2
+  } else {
+    return player = 1
+  }
+}
+
+function showNextPlayer (turn, player) {
+  turn.html('Player turn : ' + player)
+}
+
+function checkForWin (table, gamePiece) {
+  let won = 0
+  if (table.find('#0').hasClass(gamePiece) && table.find('#1').hasClass(gamePiece) && table.find('#2').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#0').hasClass(gamePiece) && table.find('#3').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#0').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#8').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#3').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#5').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#6').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece) && table.find('#8').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#1').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#2').hasClass(gamePiece) && table.find('#5').hasClass(gamePiece) && table.find('#8').hasClass(gamePiece)) {
+    won = 1
+  } else if (table.find('#2').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece)) {
+    won = 1
+  }
+  return won
+}
+
+function reset (table) {
+  table.find('td').each(function () {
+    $(this).removeClass('circle').removeClass('cross')
+  })
 }

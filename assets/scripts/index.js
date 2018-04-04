@@ -12,5 +12,21 @@ const gameApi = require('./auth/events')
 $(() => {
   gameApi.addHandlers()
   // authEvents.addHandlers()
-//  exampleEvents.addHandlers()
 })
+
+const gameLogic = require('./auth/gameLogic')
+//
+// $(() => {
+//   gameLogic.addHandlers()
+// })
+
+// const box = $('.box')
+//
+// $('box').on('click', function (event) {
+//   event.preventDefault()
+//
+//   console.log('index You clicked me!', event.target)
+// })
+module.exports = {
+  gameLogic
+}

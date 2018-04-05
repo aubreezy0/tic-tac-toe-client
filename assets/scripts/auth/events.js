@@ -64,6 +64,7 @@ $(function () {
         turn.html('')
         freeze(table)
       } else {
+        messages.html('')
         player = setNextPlayer(player)
         showNextPlayer(turn, player)
       }

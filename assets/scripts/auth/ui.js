@@ -52,6 +52,18 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
+// const clickSuccess = function (data) {
+//   $('#message').text('You clicked it successfully!')
+//   $('#message').css('background-color', 'green')
+//   console.error('clickSuccess ran successfully. Here is more', data)
+// }
+//
+// const clickFailure = function (error) {
+//   $('#message').text('You clicked your hardest, but no.')
+//   $('#message').css('background-color', 'red')
+//   console.error('clickFailure ran. Error is :', error)
+// }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -61,6 +73,8 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
+  // clickSuccess,
+  // clickFailure
 }
 
 // api.changePassword(data)

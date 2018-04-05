@@ -7,10 +7,16 @@
 // require('./example')
 
 const gameApi = require('./auth/events')
+<<<<<<< HEAD
 // const exampleEvents = require('./examples/events')
 
 $(() => {
   gameApi.addHandlers()
   // authEvents.addHandlers()
 //  exampleEvents.addHandlers()
+=======
+
+$(() => {
+  gameApi.addHandlers()
+>>>>>>> al_working
 })

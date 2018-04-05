@@ -60,7 +60,7 @@ $(function () {
       const gamePiece = assignGamePieceToPlayer(player)
       changeBoard(td, gamePiece)
       if (checkForWin(table, gamePiece)) {
-        messages.html('Player ' + player + ', you\'re a winnah, baby!')
+        messages.html('Player ' + player + ', you\'re a winner, baby!')
         turn.html('')
         freeze(table)
       } else {

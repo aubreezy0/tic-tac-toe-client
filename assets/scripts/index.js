@@ -14,8 +14,4 @@ $(() => {
   gameApi.addHandlers()
   // authEvents.addHandlers()
 //  exampleEvents.addHandlers()
-
-
-$(() => {
-  gameApi.addHandlers()
 })

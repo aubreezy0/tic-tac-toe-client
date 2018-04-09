@@ -45,45 +45,37 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
-$(function () {
-  let player = 1
-  const table = $('table')
-  const messages = $('.messages')
-  const turn = $('.turn')
-  let td = $('td')
-  showNextPlayer(turn, player)
+let player = 1
+const table = $('table')
+const turn = $('.turn')
+let td = $('td')
 
-  $('td').on('click', function () {
-    td = $(this)
-    const board = getBoard(td)
-    if (!board) {
-      const gamePiece = assignGamePieceToPlayer(player)
-      changeBoard(td, gamePiece)
-      if (checkForWin(table, gamePiece)) {
-        messages.html('Player ' + player + ', you\'re a winner, baby!')
-        turn.html('')
-        freeze(table)
-      } else {
-        messages.html('')
-        player = setNextPlayer(player)
-        showNextPlayer(turn, player)
-      }
+$('td').on('click', function () {
+  td = $(this)
+  // 1 if occupied, 0 if empty
+  const board = getBoard(td)
+  if (!board) { // is the sq occupied
+    const gamePiece = assignGamePieceToPlayer(player)
+    changeBoard(td, gamePiece) // not occupied add x/o
+    if (checkForWin(table, gamePiece)) {
+      $('.messages').html('Player ' + player + ', you\'re a winner, baby!')
+      turn.html('')
+      freeze(table)
     } else {
-      messages.html('This box is already checked.')
+      $('.messages').html('')
+      player = setNextPlayer(player)
+      showNextPlayer(turn, player)
     }
-  })
+  } else {
+    $('.messages').html('This box is already checked.')
+  }
+})
 
-  $('.freeze').on('click', function () {
-    won === true
-    freeze(table)
-  })
-
-  $('.reset').on('click', function () {
-    player = 1
-    messages.html('')
-    reset(table)
-    showNextPlayer(turn, player)
-  })
+$('.reset').on('click', function () {
+  player = 1
+  $('.messages').html('')
+  reset(table)
+  showNextPlayer(turn, player)
 })
 
 function getBoard (td) {
@@ -122,7 +114,7 @@ function checkForWin (table, gamePiece) {
   let won = 0
   if (table.find('#0').hasClass(gamePiece) && table.find('#1').hasClass(gamePiece) && table.find('#2').hasClass(gamePiece)) {
     won = 1
-  } else if (table.find('#0').hasClass(gamePiece) && table.find('#3').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece)) {
+  } else if (table.find('#0').hasClass(gamePiece) && table.find('#3').hasClass(gamePiece) && table.find('#6').hasClass(gamePiece)) {
     won = 1
   } else if (table.find('#0').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#8').hasClass(gamePiece)) {
     won = 1
@@ -134,7 +126,7 @@ function checkForWin (table, gamePiece) {
     won = 1
   } else if (table.find('#2').hasClass(gamePiece) && table.find('#5').hasClass(gamePiece) && table.find('#8').hasClass(gamePiece)) {
     won = 1
-  } else if (table.find('#2').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#7').hasClass(gamePiece)) {
+  } else if (table.find('#2').hasClass(gamePiece) && table.find('#4').hasClass(gamePiece) && table.find('#6').hasClass(gamePiece)) {
     won = 1
   }
   return won

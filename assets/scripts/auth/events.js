@@ -74,7 +74,7 @@ $('td').on('click', function () {
 $('.reset').on('click', function () {
   player = 1
   $('.messages').html('')
-  reset(table)
+  resetBoard(table)
   showNextPlayer(turn, player)
 })
 
@@ -143,7 +143,7 @@ function freeze (table) {
   })
 }
 
-function reset (table) {
+function resetBoard (table) {
   table.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross').removeClass('noclick')
   })
@@ -163,7 +163,7 @@ module.exports = {
   changeBoard,
   checkForWin,
   setNextPlayer,
-  reset,
+  resetBoard,
   freeze,
   assignGamePieceToPlayer
 }

@@ -49,9 +49,27 @@ const changePassword = function (data) {
   })
 }
 
+const newGame = function (data) {
+  console.log('data is ', data)
+  return $.ajax({
+    url: config.apiUrl + '/new_game',
+    method: 'POST',
+    headers: {
+      // contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+// .then(function (data) {
+//   console.log('after create, data is', data)  //   store.game = data.game  //   ui.displayBoard()
+//   $('#message').text('')
+// })
+// }
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  newGame
 }

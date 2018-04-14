@@ -5,6 +5,13 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
+// putting these all in until refactor
+// const logic = require('./logic')
+const store = require('../store')
+// const ui = require('./ui')
+const config = require('../config')
+// end
+
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
@@ -45,6 +52,40 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  console.log('onNewGame ran!')
+
+  const data = getFormFields(this)
+  api.newGame(data)
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
+
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('submit', onSignOut)
+  $('#new-game').on('submit', onNewGame)
+}
+
+module.exports = {
+  addHandlers,
+  showNextPlayer,
+  getBoard,
+  changeBoard,
+  checkForWin,
+  setNextPlayer,
+  resetBoard,
+  freeze,
+  // adding for now
+  // logic,
+  store,
+  config,
+  assignGamePieceToPlayer
+}
+// game play
 let player = 1
 const table = $('table')
 const turn = $('.turn')
@@ -147,23 +188,4 @@ function resetBoard (table) {
   table.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross').removeClass('noclick')
   })
-}
-
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-}
-
-module.exports = {
-  addHandlers,
-  showNextPlayer,
-  getBoard,
-  changeBoard,
-  checkForWin,
-  setNextPlayer,
-  resetBoard,
-  freeze,
-  assignGamePieceToPlayer
 }

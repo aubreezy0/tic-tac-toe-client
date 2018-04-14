@@ -5,8 +5,7 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-
-const gameApi = require('./auth/events')
+const gameApi = require('./game/game_events')
 
 // const exampleEvents = require('./examples/events')
 

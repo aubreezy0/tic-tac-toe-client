@@ -52,6 +52,18 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
+const newGameSuccess = function (data) {
+  $('#message').text('You created a new game')
+  $('#message').css('background-color', 'green')
+  console.log('newGameSuccess ran and nothing was returned!')
+}
+
+const newGameFailure = function (error) {
+  $('#message').text('No new game for you.')
+  $('#message').css('background-color', 'red')
+  console.error('newGameFailure ran. Error is :', error)
+}
+
 // const clickSuccess = function (data) {
 //   $('#message').text('You clicked it successfully!')
 //   $('#message').css('background-color', 'green')
@@ -72,7 +84,9 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  newGameSuccess,
+  newGameFailure
   // clickSuccess,
   // clickFailure
 }

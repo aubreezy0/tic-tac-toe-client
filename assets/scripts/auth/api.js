@@ -50,9 +50,9 @@ const changePassword = function (data) {
 }
 
 const newGame = function (data) {
-  console.log('data is ', data)
+  console.log('data is ', store.user)
   return $.ajax({
-    url: config.apiUrl + '/new_game',
+    url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
       // contentType: 'application/json',

@@ -50,17 +50,31 @@ const changePassword = function (data) {
 }
 
 const newGame = function (data) {
-  console.log('data is ', store.user)
-  return $.ajax({
+//  console.log('data is ', store.game)
+  $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
-      // contentType: 'application/json',
-      Authorization: 'Token token=' + store.user.token
+      Authorization: `Token token=${store.game.token}`
     },
+    store.game = data.game
     data
   })
 }
+
+
+
+//   $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'POST',
+//     headers: {
+//       // contentType: 'application/json',
+//       Authorization: 'Token token=' + store.game.token
+//     },
+//     data
+//   })
+// }
+
 // .then(function (data) {
 //   console.log('after create, data is', data)  //   store.game = data.game  //   ui.displayBoard()
 //   $('#message').text('')

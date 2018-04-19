@@ -57,7 +57,7 @@ const newGame = function (data) {
     headers: {
       Authorization: `Token token=${store.game.token}`
     },
-    store.game = data.game
+  //  store.game = data.game
     data
   })
 }

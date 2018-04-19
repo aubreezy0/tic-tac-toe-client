@@ -5,85 +5,76 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 
-// putting these all in until refactor
-// const logic = require('./logic')
 const store = require('../store')
-// const ui = require('./ui')
 const config = require('../config')
-// end
 
-const onSignUp = function (event) {
-  event.preventDefault()
-  console.log('sign up ran!')
+const onCreateGame = function (event) {
+  console.log('New game was created!')
 
   const data = getFormFields(this)
   api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
 }
 
-const onSignIn = function (event) {
-  event.preventDefault()
-  console.log('sign in ran!')
-
-  const data = getFormFields(this)
-  api.signIn(data)
-    .then(ui.signInSuccess)
-    .catch(ui.signInFailure)
-}
-
-const onSignOut = function (event) {
-  event.preventDefault()
-  console.log('sign out ran')
-
-  const data = getFormFields(this)
-  api.signOut(data)
-    .then(ui.signOutSuccess)
-    .catch(ui.signOutFailure)
-}
-
-const onChangePassword = function (event) {
-  event.preventDefault()
-  console.log('change password ran!')
-
-  const data = getFormFields(this)
-  api.changePassword(data)
-    .then(ui.changePasswordSuccess)
-    .catch(ui.changePasswordFailure)
-}
-
-const onNewGame = function (event) {
-  event.preventDefault()
-  console.log('onNewGame ran!')
-
-  const data = getFormFields(this)
-  api.newGame(data)
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
-}
+// const onSignIn = function (event) {
+//   event.preventDefault()
+//   console.log('sign in ran!')
+//
+//   const data = getFormFields(this)
+//   api.signIn(data)
+//     .then(ui.signInSuccess)
+//     .catch(ui.signInFailure)
+// }
+//
+// const onSignOut = function (event) {
+//   event.preventDefault()
+//   console.log('sign out ran')
+//
+//   const data = getFormFields(this)
+//   api.signOut(data)
+//     .then(ui.signOutSuccess)
+//     .catch(ui.signOutFailure)
+// }
+//
+// const onChangePassword = function (event) {
+//   event.preventDefault()
+//   console.log('change password ran!')
+//
+//   const data = getFormFields(this)
+//   api.changePassword(data)
+//     .then(ui.changePasswordSuccess)
+//     .catch(ui.changePasswordFailure)
+// }
+//
+// const onNewGame = function (event) {
+//   event.preventDefault()
+//   console.log('onNewGame ran!')
+//
+//   const data = getFormFields(this)
+//   api.newGame(data)
+//     .then(ui.newGameSuccess)
+//     .catch(ui.newGameFailure)
+// }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-  $('#new-game').on('submit', onNewGame)
+  $('#create-game').on('submit', onCreateGame)
 }
 
 module.exports = {
-  addHandlers,
-  showNextPlayer,
-  getBoard,
-  changeBoard,
-  checkForWin,
-  setNextPlayer,
-  resetBoard,
-  freeze,
-  // adding for now
-  // logic,
-  store,
-  config,
-  assignGamePieceToPlayer
+  addHandlers
+  // showNextPlayer,
+  // getBoard,
+  // changeBoard,
+  // checkForWin,
+  // setNextPlayer,
+  // resetBoard,
+  // freeze,
+  // // adding for now
+  // // logic,
+  // store,
+  // config,
+  // assignGamePieceToPlayer
 }
 // game play
 let player = 1

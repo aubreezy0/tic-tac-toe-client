@@ -61,10 +61,23 @@ const createGame = function () {
   })
 }
 
+const showGame = function () {
+  console.log('showGame function ran')
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    // url: config.apiUrl + '/games?over=false/:id',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  createGame
+  createGame,
+  showGame
 }

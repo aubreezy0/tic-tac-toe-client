@@ -51,10 +51,19 @@ const onCreateGame = function (event) {
 
   // const data = getFormFields(this)
   api.createGame()
-  console.log('We made it through api createGame!')
-  // .then(ui.createGameSuccess)
-  // .catch(ui.createGameFailure)
-  console.log('and past then!')
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure)
+  console.log('api.createGame ran!')
+}
+
+const onShowGame = function (event) {
+  event.preventDefault()
+  console.log('New game was yay created!')
+
+  api.showGame()
+    .then(ui.showGameSuccess)
+    .catch(ui.showGameFailure)
+  console.log('api,showGame ran')
 }
 
 const addHandlers = () => {
@@ -63,6 +72,7 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#create-game').on('submit', onCreateGame)
+  $('#show-game').on('submit', onShowGame)
 }
 
 // deleted module

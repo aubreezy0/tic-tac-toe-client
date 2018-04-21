@@ -45,6 +45,14 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onChangePassword)
+  $('#sign-out').on('submit', onSignOut)
+}
+
+// deleted module
 let player = 1
 const table = $('table')
 const turn = $('.turn')
@@ -148,14 +156,6 @@ function resetBoard (table) {
     $(this).removeClass('circle').removeClass('cross').removeClass('noclick')
   })
 }
-
-const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
-}
-
 module.exports = {
   addHandlers,
   showNextPlayer,

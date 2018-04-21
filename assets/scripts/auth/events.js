@@ -45,11 +45,24 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  console.log('New game was yay created!')
+
+  // const data = getFormFields(this)
+  api.createGame()
+  console.log('We made it through api createGame!')
+  // .then(ui.createGameSuccess)
+  // .catch(ui.createGameFailure)
+  console.log('and past then!')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#create-game').on('submit', onCreateGame)
 }
 
 // deleted module

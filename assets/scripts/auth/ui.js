@@ -52,17 +52,18 @@ const changePasswordFailure = function (error) {
   console.error('changePasswordFailure ran. Error is :', error)
 }
 
-// const clickSuccess = function (data) {
-//   $('#message').text('You clicked it successfully!')
-//   $('#message').css('background-color', 'green')
-//   console.error('clickSuccess ran successfully. Here is more', data)
-// }
-//
-// const clickFailure = function (error) {
-//   $('#message').text('You clicked your hardest, but no.')
-//   $('#message').css('background-color', 'red')
-//   console.error('clickFailure ran. Error is :', error)
-// }
+const createGameSuccess = function () {
+  $('#message').text('You created a new game')
+  $('#message').css('background-color', 'green')
+  console.log('createGameSuccess ran')
+  // store.game = data.game
+}
+
+const createGameFailure = function (error) {
+  $('#message').text('No new game for you.')
+  $('#message').css('background-color', 'red')
+  console.error('createGameFailure ran. Error is :', error)
+}
 
 module.exports = {
   signUpSuccess,
@@ -72,11 +73,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
-  // clickSuccess,
-  // clickFailure
+  changePasswordFailure,
+  createGameSuccess,
+  createGameFailure
 }
-
-// api.changePassword(data)
-//   .then(ui.changePasswordSuccess)
-//   .catch(ui.changePasswordFailure)

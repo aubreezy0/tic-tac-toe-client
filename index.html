@@ -20,7 +20,8 @@
   <h4 class="title">tic it. tac it. whatever, just do it.</h4>
 
 <!-- <br /><input class="reset" type="button" value="Old Reset" /> -->
-
+    <p id="message"></p><br>
+<div class=auth-block>
     <h3>Sign Up.</h3>
     <form id="sign-up" class="border">
       <fieldset>
@@ -31,8 +32,6 @@
       </fieldset>
     </form>
 
-    <p id="message"></p>
-
     <h3>Sign In.</h3>
     <form id="sign-in" class="border">
       <fieldset>
@@ -41,6 +40,7 @@
         <input class="reset" type="submit" value="Sign in!">
       </fieldset>
     </form>
+  </div>
 <div class="hiding-board hidden">
     <h3 class="title">New Game!</h3>
     <form id="create-game" class="border">
@@ -77,16 +77,23 @@
     <p id="message-fun"></p>
 <hr>
 </div>
-    <h3>Change Password.</h3>
+<h3>Identity Hacked?</h3>
+<form id="btn-password" class="border">
+  <fieldset>
+    <input class="reset" type="submit" value="Change Password!">
+  </fieldset>
+</form>
+  <div class="form-password hidden">
     <form id="change-password" class="border">
       <fieldset>
         <input type="password" name="passwords[old]" autocomplete="foo" placeholder="Old">
         <input type="password" name="passwords[new]" autocomplete="foo" placeholder="New">
-        <input class="reset" type="submit" value="Change password!">
+        <input class="reset" type="submit" value="Submit!">
       </fieldset>
     </form>
+  </div>
 
-    <h3>Be a Quitter.</h3>
+    <h3>Tell Me You're not a Quitter.</h3>
     <form id="sign-out" class="border">
       <fieldset>
         <input class="reset" type="submit" value="Sign Out!">

@@ -66,6 +66,15 @@ const onShowGame = function (event) {
   console.log('api,showGame ran')
 }
 
+const onShowPassword = function (event) {
+  event.preventDefault()
+  $('#message').text('You bet you pushed it')
+  $('#message').css('background-color', 'purple')
+  $('.form-password').removeClass('hidden')
+  console.log('createGameSuccess ran')
+  console.log('pushing buttons!')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -73,6 +82,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#create-game').on('submit', onCreateGame)
   $('#show-game').on('submit', onShowGame)
+  $('#btn-password').on('submit', onShowPassword)
 }
 
 // deleted module
@@ -179,6 +189,7 @@ function resetBoard (table) {
     $(this).removeClass('circle').removeClass('cross').removeClass('noclick')
   })
 }
+
 module.exports = {
   addHandlers,
   showNextPlayer,
@@ -189,4 +200,5 @@ module.exports = {
   resetBoard,
   freeze,
   assignGamePieceToPlayer
+  // showPassword
 }

@@ -18,6 +18,7 @@ const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
   $('#message').css('background-color', 'green')
   $('.hiding-board').removeClass('hidden')
+  $('.auth-block').addClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }

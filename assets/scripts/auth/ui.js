@@ -17,6 +17,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Successfully signed in')
   $('#message').css('background-color', 'green')
+  $('.hiding-board').removeClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -66,9 +67,10 @@ const createGameFailure = function (error) {
 }
 
 const showGameSuccess = function (data) {
-  $('#message').text('You are showing great game success, ')
-  $('#message').append(data.games.length)
-  $('#message').css('background-color', 'green')
+  $('#message-fun').delay(4000).fadeOut(150)
+  $('#message-fun').text('You are showing great game success, ')
+  $('#message-fun').append(data.games.length)
+  $('#message-fun').css('background-color', 'green')
   console.log('showGameSuccess ran', data)
   store.game = data.game
 }

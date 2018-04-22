@@ -11,6 +11,10 @@ input {
   color: $black;
 }
 
+.hidden {
+  display: none;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: 100px 100px 100px;

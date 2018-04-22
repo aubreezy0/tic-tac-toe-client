@@ -19,43 +19,7 @@
   <p class="title">Seriously, it's awesome... am I right?</p>
   <h4 class="title">tic it. tac it. whatever, just do it.</h4>
 
-<div class="messages"></div>
-<div class="turn"></div>
-<table>
-  <tr>
-    <td id="0"></td>
-    <td id="1"></td>
-    <td id="2"></td>
-  </tr>
-  <tr>
-    <td id="3"></td>
-    <td id="4"></td>
-    <td id="5"></td>
-  </tr>
-  <tr>
-    <td id="6"></td>
-    <td id="7"></td>
-    <td id="8"></td>
-  </tr>
-</table>
-
 <!-- <br /><input class="reset" type="button" value="Old Reset" /> -->
-
-<hr>
-    <p id="message"></p>
-    <h3 class="title">New Game!</h3>
-    <form id="create-game" class="border">
-      <fieldset>
-        <input class="reset" type="submit" value="Start a new Game!">
-      </fieldset>
-    </form>
-
-    <h3>How Fun are You?</h3>
-    <form id="show-game" class="border">
-      <fieldset>
-        <input class="reset" type="submit" value="Fun Counter">
-      </fieldset>
-    </form>
 
     <h3>Sign Up.</h3>
     <form id="sign-up" class="border">
@@ -67,6 +31,8 @@
       </fieldset>
     </form>
 
+    <p id="message"></p>
+
     <h3>Sign In.</h3>
     <form id="sign-in" class="border">
       <fieldset>
@@ -75,7 +41,42 @@
         <input class="reset" type="submit" value="Sign in!">
       </fieldset>
     </form>
+<div class="hiding-board hidden">
+    <h3 class="title">New Game!</h3>
+    <form id="create-game" class="border">
+      <fieldset>
+        <input class="reset" type="submit" value="Start a new Game!">
+      </fieldset>
+    </form>
 
+    <div class="messages"></div>
+    <div class="turn"></div>
+    <table>
+      <tr>
+        <td id="0"></td>
+        <td id="1"></td>
+        <td id="2"></td>
+      </tr>
+      <tr>
+        <td id="3"></td>
+        <td id="4"></td>
+        <td id="5"></td>
+      </tr>
+      <tr>
+        <td id="6"></td>
+        <td id="7"></td>
+        <td id="8"></td>
+      </tr>
+    </table>
+    <h3>How Fun are You?</h3>
+    <form id="show-game" class="border">
+      <fieldset>
+        <input class="reset" type="submit" value="Fun Counter">
+      </fieldset>
+    </form>
+    <p id="message-fun"></p>
+<hr>
+</div>
     <h3>Change Password.</h3>
     <form id="change-password" class="border">
       <fieldset>

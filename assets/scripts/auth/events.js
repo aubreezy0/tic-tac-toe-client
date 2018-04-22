@@ -58,7 +58,7 @@ const onCreateGame = function (event) {
 
 const onShowGame = function (event) {
   event.preventDefault()
-  console.log('New game was yay created!')
+  console.log('Your fun-counter is showing!')
 
   api.showGame()
     .then(ui.showGameSuccess)

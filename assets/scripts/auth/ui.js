@@ -30,7 +30,7 @@ const signInFailure = function (error) {
 const signOutSuccess = function (data) {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
-  console.log('signOutSuccess ran and nothing was returned!')
+  console.log('signOutSuccess ran and was a success!!')
   store.user = null
 }
 
@@ -66,7 +66,8 @@ const createGameFailure = function (error) {
 }
 
 const showGameSuccess = function (data) {
-  $('#message').text('You are showing great game success')
+  $('#message').text('You are showing great game success, ')
+  $('#message').append(data.games.length)
   $('#message').css('background-color', 'green')
   console.log('showGameSuccess ran', data)
   store.game = data.game

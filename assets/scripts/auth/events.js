@@ -10,6 +10,7 @@ const onSignUp = function (event) {
   console.log('sign up ran!')
 
   const data = getFormFields(this)
+  document.getElementById('sign-up').reset()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -20,6 +21,7 @@ const onSignIn = function (event) {
   console.log('sign in ran!')
 
   const data = getFormFields(this)
+  document.getElementById('sign-in').reset()
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -31,6 +33,7 @@ const onSignOut = function (event) {
   console.log('sign out ran')
 
   const data = getFormFields(this)
+  document.getElementById('sign-out').reset()
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -41,6 +44,7 @@ const onChangePassword = function (event) {
   console.log('change password ran!')
 
   const data = getFormFields(this)
+  document.getElementById('change-password').reset()
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
@@ -51,6 +55,7 @@ const onCreateGame = function (event) {
   console.log('New game was yay created!')
 
   // const data = getFormFields(this)
+  document.getElementById('create-game').reset()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
@@ -61,9 +66,11 @@ const onShowGame = function (event) {
   event.preventDefault()
   console.log('Your fun-counter is showing!')
 
+  document.getElementById('show-game').reset()
   api.showGame()
     .then(ui.showGameSuccess)
     .catch(ui.showGameFailure)
+  freeze(table)
   console.log('api,showGame ran')
 }
 

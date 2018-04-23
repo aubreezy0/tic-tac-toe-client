@@ -23,6 +23,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+  freeze(table)
 }
 
 const onSignOut = function (event) {
@@ -71,7 +72,8 @@ const onShowPassword = function (event) {
   $('#message').text('You bet you pushed it')
   $('#message').css('background-color', 'purple')
   $('.form-password').removeClass('hidden')
-  console.log('createGameSuccess ran')
+  $('.btn-password-hide').addClass('hidden')
+  console.log('onShowPassword ran')
   console.log('pushing buttons!')
 }
 

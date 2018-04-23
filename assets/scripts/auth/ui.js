@@ -3,8 +3,10 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
+  $('#message').delay(2000).fadeOut(150)
+  $('#message').text('Signed up successfully. Please sign in!')
   $('#message').css('background-color', 'green')
+  $('.sign-up-show').addClass('hidden')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -15,10 +17,14 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (data) {
+  // $('#message').delay(4000).fadeOut(150)
   $('#message').text('Successfully signed in')
   $('#message').css('background-color', 'green')
   $('.hiding-board').removeClass('hidden')
-  $('.auth-block').addClass('hidden')
+  $('.table-wrapper').addClass('noclick')
+  $('.sign-in-footer').removeClass('hidden')
+  $('.sign-in-show').addClass('hidden')
+  $('.sign-up-show').addClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -32,6 +38,10 @@ const signInFailure = function (error) {
 const signOutSuccess = function (data) {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
+  $('.hiding-board').addClass('hidden')
+  $('.sign-in-footer').addClass('hidden')
+  $('.sign-in-show').removeClass('hidden')
+  $('.sign-up-show').removeClass('hidden')
   console.log('signOutSuccess ran and was a success!!')
   store.user = null
 }
@@ -57,6 +67,7 @@ const changePasswordFailure = function (error) {
 const createGameSuccess = function (data) {
   $('#message').text('You created a new game')
   $('#message').css('background-color', 'green')
+  $('.table-wrapper').removeClass('noclick')
   console.log('createGameSuccess ran', data)
   store.game = data.game
 }
@@ -68,7 +79,7 @@ const createGameFailure = function (error) {
 }
 
 const showGameSuccess = function (data) {
-  $('#message-fun').delay(4000).fadeOut(150)
+  // $('#message-fun').delay(4000).fadeOut(150)
   $('#message-fun').text('You are showing great game success, ')
   $('#message-fun').append(data.games.length)
   $('#message-fun').css('background-color', 'green')

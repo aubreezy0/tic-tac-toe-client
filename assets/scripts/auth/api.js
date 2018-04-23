@@ -22,7 +22,7 @@ const signIn = function (data) {
 }
 
 const signOut = function (data) {
-  console.log('signOut store.user is ', store.user)
+  // console.log('signOut store.user is ', store.user)
   return $.ajax({
     url: config.apiUrl + `/sign-out/${
       store.user.id
@@ -37,7 +37,7 @@ const signOut = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
+  // console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password/:id',
     method: 'PATCH',
@@ -50,7 +50,7 @@ const changePassword = function (data) {
 }
 
 const createGame = function () {
-  console.log('createGame function ran')
+  // console.log('createGame function ran')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -62,7 +62,7 @@ const createGame = function () {
 }
 
 const showGame = function () {
-  console.log('showGame function ran')
+  // console.log('showGame function ran')
   return $.ajax({
     url: config.apiUrl + '/games',
     // url: config.apiUrl + '/games?over=false/:id',

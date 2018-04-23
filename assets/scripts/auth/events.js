@@ -7,7 +7,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+  // console.log('sign up ran!')
 
   const data = getFormFields(this)
   document.getElementById('sign-up').reset()
@@ -18,7 +18,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+  // console.log('sign in ran!')
 
   const data = getFormFields(this)
   document.getElementById('sign-in').reset()
@@ -30,7 +30,7 @@ const onSignIn = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+  // console.log('sign out ran')
 
   const data = getFormFields(this)
   document.getElementById('sign-out').reset()
@@ -41,7 +41,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(this)
   document.getElementById('change-password').reset()
@@ -52,26 +52,26 @@ const onChangePassword = function (event) {
 
 const onCreateGame = function (event) {
   event.preventDefault()
-  console.log('New game was yay created!')
+  // console.log('New game was yay created!')
 
   // const data = getFormFields(this)
   document.getElementById('create-game').reset()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure)
-  console.log('api.createGame ran!')
+  // console.log('api.createGame ran!')
 }
 
 const onShowGame = function (event) {
   event.preventDefault()
-  console.log('Your fun-counter is showing!')
+  // console.log('Your fun-counter is showing!')
 
   document.getElementById('show-game').reset()
   api.showGame()
     .then(ui.showGameSuccess)
     .catch(ui.showGameFailure)
   freeze(table)
-  console.log('api,showGame ran')
+  // console.log('api,showGame ran')
 }
 
 const onShowPassword = function (event) {
@@ -80,8 +80,8 @@ const onShowPassword = function (event) {
   $('#message').css('background-color', 'purple')
   $('.form-password').removeClass('hidden')
   $('.btn-password-hide').addClass('hidden')
-  console.log('onShowPassword ran')
-  console.log('pushing buttons!')
+  // console.log('onShowPassword ran')
+  // console.log('pushing buttons!')
 }
 
 const addHandlers = () => {

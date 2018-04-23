@@ -7,14 +7,14 @@ const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully. Please sign in!')
   $('#message').css('background-color', 'green')
   $('.sign-up-show').addClass('hidden')
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('Error on sign up')
   $('#message').css('background-color', 'red')
-  console.error('signUpFailure ran. Error is :', error)
+  // console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
@@ -26,49 +26,48 @@ const signInSuccess = function (data) {
   $('.sign-in-footer').removeClass('hidden')
   $('.sign-in-show').delay(2000).addClass('hidden')
   $('.sign-up-show').addClass('hidden')
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('You failed')
   $('#message').css('background-color', 'red')
-  console.error('signInFailure ran. Error is :', error)
+  // console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function (data) {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
-  // $('.hiding-board').addClass('hidden')
-  // $('.sign-in-footer').addClass('hidden')
-  // $('.sign-in-show').removeClass('hidden')
-  // $('.sign-up-show').removeClass('hidden')
-  console.log('signOutSuccess ran and was a success!!')
+  $('.hiding-board').addClass('hidden')
+  $('.sign-in-footer').addClass('hidden')
+  $('.sign-in-show').removeClass('hidden')
+  $('.sign-up-show').removeClass('hidden')
+  // console.log('signOutSuccess ran and was a success!!')
   store.user = null
-  location.reload()
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('Error on sign out')
   $('#message').css('background-color', 'red')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function (data) {
   $('#message-footer').delay(2000).fadeOut(150)
   $('#message-footer').text('Successfully changed password')
   $('#message-footer').css('background-color', 'green')
-  console.log('changePasswordSuccess ran!')
+  // console.log('changePasswordSuccess ran!')
 }
 
-const changePasswordFailure = function (error) {
-  $('#message').delay(2000).fadeOut(150)
-  $('#message').text('Password not changed')
-  $('#message').css('background-color', 'red')
-  console.error('changePasswordFailure ran. Error is :', error)
+const changePasswordFailure = function () {
+  $('#message-footer').delay(2000).fadeOut(150)
+  $('#message-footer').text('Password not changed')
+  $('#message-footer').css('background-color', 'red')
+  // console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const createGameSuccess = function (data) {
@@ -77,15 +76,15 @@ const createGameSuccess = function (data) {
   $('#message').css('background-color', 'green')
   $('.table-wrapper').removeClass('noclick')
   $('.btn-fun').removeClass('noclick')
-  console.log('createGameSuccess ran', data)
+  // console.log('createGameSuccess ran', data)
   store.game = data.game
 }
 
-const createGameFailure = function (error) {
+const createGameFailure = function () {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('No new game for you.')
   $('#message').css('background-color', 'red')
-  console.error('createGameFailure ran. Error is :', error)
+  // console.error('createGameFailure ran. Error is :', error)
 }
 
 const showGameSuccess = function (data) {
@@ -93,15 +92,15 @@ const showGameSuccess = function (data) {
   $('#message-fun').text('You are showing great game success, ')
   $('#message-fun').append(data.games.length)
   $('#message-fun').css('background-color', 'green')
-  console.log('showGameSuccess ran', data)
+  // console.log('showGameSuccess ran', data)
   store.game = data.game
 }
 
-const showGameFailure = function (error) {
+const showGameFailure = function () {
   $('#message').delay(2000).fadeOut(150)
   $('#message').text('You are not showing games.')
   $('#message').css('background-color', 'red')
-  console.error('createGameFailure ran. Error is :', error)
+  // console.error('createGameFailure ran. Error is :', error)
 }
 
 module.exports = {

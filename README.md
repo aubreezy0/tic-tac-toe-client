@@ -1,30 +1,35 @@
-# read me
-https://docs.google.com/document/d/1W4AQJVZAv-sDtPlkc-WCCuQKj8sE3yftzFHkfck8EcY/edit?usp=sharing
-(Please request permission)
+# read me for TIC TAC TOETALLY AWESOME
 
-List of requirements for future references
-https://docs.google.com/document/d/1D6FxVVIJtMLrXSpqoD8OoMKobbsz0HkOLvhoLBBmr4k/edit?usp=sharing
+# Technologies used:
+HMTL
+SCSS
+JavaScript
+ajax
+jQuery
 
-(and below)
-browser-template
-A template for starting front-end projects. Webpack for require system, build pipeline, and development server. Boostrap and Handlebars.js included. No front-end frameworks included.
+# Planning and design
+Design concept was simple layout with atari-like aesthetic. Logos and font styles were researched and cataloged on imgur.
+https://imgur.com/a/OnKe4
 
-Structure
-Developers should store JavaScript files in assets/scripts. The "manifest" or entry-point is assets/scripts/index.js. In general, only application initialization goes in this file. It's normal for developers to start putting all code in this file, but encourage them to break out different responsibilities and use the require syntax put references where they're needed.
+Wireframes of the tic tac toe board were laid out in a spreadsheet
+https://docs.google.com/spreadsheets/d/1GblcCDYsPk-VNlL8NgfaYQHyhXJe_beslkVxasZpwDg/edit?usp=sharing
 
-Developers should set apiUrls.production and apiUrls.development in config/environment.js. With apiUrls set, developers may rely on apiUrl as the base for API URLs.
-
-Developers should store styles in assets/styles and load them from assets/styles/index.scss. Bootstrap version 3 is included in this template.
-
-Developers should use getFormFields [https://git.generalassemb.ly/ga-wdi-boston/browser-template/blob/master/get-form-fields.md] to retrieve form data to send to an API.
-
-To deploy a browser-template based SPA, run grunt deploy.
-
-Tasks
-Developers should run these often!
-
-grunt nag or just grunt: runs code quality analysis tools on your code and complains
-grunt make-standard: reformats all your code in the JavaScript Standard Style
-grunt <server|serve|s>: generates bundles, watches, and livereloads
-grunt test: runs any automated tests, depends on grunt build
-grunt build: place bundled styles and scripts where index.html can find them
+# User Stories
+User Stories
+The player wants to be able to sign in easily
+The player wants feedback when they have signed in.
+The player wants an easy signup process
+The player wants to know where to click to sign up
+The player wants a simple form to complete sign up information.
+The player wants feedback that the sign up was successful
+The player does not want to have to sign in after signing up.
+The player wants to see readily how to start the game.
+The player wants to be able to play the game.
+The player expects the game to behave in accordance with the standard rules of play.
+The player doesn’t want to be able to cheat.
+The player doesn’t want to be confused about where to click.
+The player wants to know when the game is a stalemate
+The player wants to know when they win the game
+The player wants to know how they won the game
+The player wants to see how to start a new game
+The player does not want to have to sign in to start a second game.

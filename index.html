@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>tic tac toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+  <h2 class="title">TIC TAC TOETALLY AWESOME</h2>
+  <p class="title">Seriously, it's awesome... am I right?</p>
+  <h4 class="title">tic it. tac it. whatever, just do it.</h4>
+
+<!-- <br /><input class="reset" type="button" value="Old Reset" /> -->
+    <p id="message"></p><br>
+<div class="sign-up-show">
+    <h3>Sign Up.</h3>
+    <form id="sign-up" class="border">
+      <fieldset>
+        <input type="text" name="credentials[email]" autocomplete="foo" placeholder="Email">
+        <input type="password" name="credentials[password]" autocomplete="foo" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" autocomplete="foo"  placeholder="Password Confirmation">
+        <input class="reset" type="submit" value="Sign up!">
+      </fieldset>
+    </form>
+  </div>
+
+    <div class="sign-in-show">
+    <h3>Sign In.</h3>
+    <form id="sign-in" class="border">
+      <fieldset>
+        <input type="text" name="credentials[email]" autocomplete="foo" placeholder="Email">
+        <input type="password" name="credentials[password]" autocomplete="foo" placeholder="Password">
+        <input class="reset" type="submit" value="Sign in!">
+      </fieldset>
+    </form>
+  </div>
+<div class="hiding-board hidden">
+    <h3 class="title">New Game!</h3>
+    <form id="create-game" class="border">
+      <fieldset>
+        <input class="reset" type="submit" value="Start a new Game!">
+      </fieldset>
+    </form>
+
+    <div class="messages"></div>
+    <div class="turn"></div>
+    <div class="table-wrapper">
+    <table>
+      <tr>
+        <td id="0"></td>
+        <td id="1"></td>
+        <td id="2"></td>
+      </tr>
+      <tr>
+        <td id="3"></td>
+        <td id="4"></td>
+        <td id="5"></td>
+      </tr>
+      <tr>
+        <td id="6"></td>
+        <td id="7"></td>
+        <td id="8"></td>
+      </tr>
+    </table>
+  <!-- </div> -->
+  <!-- <div class="btn-fun noclick"> -->
+    <h3>How Fun are You?</h3>
+        <p id="message-fun"></p>
+    <form id="show-game" class="border">
+      <fieldset>
+        <input class="reset" type="submit" value="Fun Counter">
+      </fieldset>
+    </form>
+  </div>
+  <!-- </div> -->
+
+<hr>
+</div>
+<div class="sign-in-footer hidden">
+<h3>Identity Hacked?</h3>
+    <p id="message-footer"></p>
+  <!-- <div class="btn-password-hide">
+<form id="btn-password" class="border">
+  <fieldset>
+    <input class="reset" type="submit" value="Change Password!">
+  </fieldset>
+</form>
+</div>
+  <div class="form-password hidden"> -->
+    <form id="change-password" class="border">
+      <fieldset>
+        <input type="password" name="passwords[old]" autocomplete="foo" placeholder="Old password">
+        <input type="password" name="passwords[new]" autocomplete="foo" placeholder="New password">
+        <input class="reset" type="submit" value="Change Password!">
+      </fieldset>
+    </form>
+  <!-- </div> -->
+
+    <h3>Quitters Only.</h3>
+    <form id="sign-out" class="border">
+      <fieldset>
+        <input class="reset" type="submit" value="Quit and log out!">
+      </fieldset>
+    </form>
+  </div>
+
+</body>
+
+</html>
